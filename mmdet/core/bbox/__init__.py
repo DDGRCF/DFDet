@@ -2,7 +2,7 @@ from .assigners import (AssignResult, BaseAssigner, CenterRegionAssigner,
                         MaxIoUAssigner)
 from .builder import build_assigner, build_bbox_coder, build_sampler
 from .coder import (BaseBBoxCoder, DeltaXYWHBBoxCoder, PseudoBBoxCoder,
-                    TBLRBBoxCoder)
+                    TBLRBBoxCoder, OBB2DistCoder, HBB2OBBDeltaXYWHTCoder)
 from .iou_calculators import BboxOverlaps2D, bbox_overlaps
 from .samplers import (BaseSampler, CombinedSampler,
                        InstanceBalancedPosSampler, IoUBalancedNegSampler,
@@ -22,7 +22,6 @@ from .transforms_obb import (poly2obb, rectpoly2obb, poly2hbb, obb2poly, obb2hbb
 from .iou_calculators import OBBOverlaps, PolyOverlaps
 from .samplers import (OBBSamplingResult, OBBBaseSampler, OBBRandomSampler,
                        OBBOHEMSampler)
-from .coder import OBB2OBBDeltaXYWHTCoder, HBB2OBBDeltaXYWHTCoder
 
 __all__ = [
     'bbox_overlaps', 'BboxOverlaps2D', 'BaseAssigner', 'MaxIoUAssigner',
@@ -40,7 +39,7 @@ __all__ = [
     'obb_mapping_back', 'poly_mapping_back', 'get_bbox_type', 'get_bbox_dim', 'get_bbox_areas',
     'choice_by_type', 'arb2roi', 'arb2result', 'distance2obb', 'arb_mapping', 'arb_mapping_back',
     'OBBOverlaps', 'PolyOverlaps', 'OBBSamplingResult', 'OBBBaseSampler', 'OBBRandomSampler',
-    'OBBOHEMSampler', 'OBB2OBBDeltaXYWHTCoder', 'HBB2OBBDeltaXYWHTCoder', 'regular_theta',
+    'OBBOHEMSampler', 'HBB2OBBDeltaXYWHTCoder', 'regular_theta',
     'regular_obb', 'mintheta_obb', 'distance2mask', 'arb2result_withmask',
-    'obb2distance'
+    'obb2distance', 'OBB2DistCoder'
 ]
