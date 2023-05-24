@@ -11,9 +11,6 @@
 
 This is the official implement of DADet, and implemented on [OBBDetection](https://github.com/jbwang1997/OBBDetection)
 
-## License
-
-This project is released under the [Apache 2.0 license](LICENSE).
 
 ## Update
 
@@ -32,3 +29,7 @@ If you want to train or test a oriented model, please refer to [oriented_model_s
 ### How to Deploy the DADet
 
 TODO:
+
+## License
+
+This project is released under the [Apache 2.0 license](LICENSE).
