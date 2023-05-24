@@ -10,13 +10,13 @@
 - [mmcv 0.6.2](https://github.com/open-mmlab/mmcv)
 - [BboxToolkit 1.0](https://github.com/jbwang1997/BboxToolkit)
 
-### Install OBBDetection
+### Install DADet
 
 a. Create a conda virtual environment and activate it.
 
 ```shell
-conda create -n obbdetection python=3.7 -y
-conda activate obbdetection
+conda create -n dadet python=3.7 -y
+conda activate dadet
 ```
 
 b. Install PyTorch and torchvision following the [official instructions](https://pytorch.org/), e.g.,
@@ -45,14 +45,14 @@ conda install pytorch=1.3.1 cudatoolkit=9.2 torchvision=0.4.2 -c pytorch
 If you build PyTorch from source instead of installing the prebuilt pacakge,
 you can use more CUDA versions such as 9.0.
 
-c. Clone the OBBDetection repository.
+c. Clone the DADet repository.
 
 ```shell
-git clone https://github.com/jbwang1997/OBBDetection.git --recursive
-cd OBBDetection
+git clone https://github.com/DDGRCF/DADet.git --recursive
+cd DADet
 ```
 
-d. Install build requirements and then install OBBDetection.
+d. Install build requirements and then install DADet.
 
 ```shell
 # install the BboxToolkit
@@ -60,14 +60,14 @@ cd BboxToolkit
 pip install -v -e .  # or "python setup.py develop"
 cd ..
 
-# install the OBBDetection
+# install the DADet
 pip install -r requirements/build.txt
 pip install mmpycocotools
 pip install mmcv==0.6.2
 pip install -v -e .  # or "python setup.py develop"
 ```
 
-If you build OBBDetection on macOS, replace the last command with
+If you build DADet on macOS, replace the last command with
 
 ```
 CC=clang CXX=clang++ CFLAGS='-stdlib=libc++' pip install -e .
@@ -86,7 +86,7 @@ It is recommended that you run step d each time you pull some updates from githu
     find . -name "*.so" | xargs rm
     ```
 
-2. Following the above instructions, OBBDetection is installed on `dev` mode, any local modifications made to the code will take effect without the need to reinstall it (unless you submit some commits and want to update the version number).
+2. Following the above instructions, DADet is installed on `dev` mode, any local modifications made to the code will take effect without the need to reinstall it (unless you submit some commits and want to update the version number).
 
 3. If you would like to use `opencv-python-headless` instead of `opencv-python`,
 you can install it before installing MMCV.

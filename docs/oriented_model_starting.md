@@ -64,7 +64,7 @@ python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [--out ${RESULT_FILE}] [-
 ```
 
 If you use DOTA dataset, you should convert and merge bounding boxes from the patch coordinate system to the full image coordinate system.
-We merge this function in the testing process of OBBDetection. It can straightly genreate full image resutls without running other program.
+We merge this function in the testing process of DADet. It can straightly genreate full image resutls without running other program.
 
 ```shell
 python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} --format-only --options save_dir=${SAVE_DIR}

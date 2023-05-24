@@ -5,7 +5,8 @@ _base_ = [
 
 model = dict(
     type='ATSSOBB',
-    pretrained='open-mmlab://detectron/resnet50_caffe',
+    pretrained=
+    'https://download.openmmlab.com/pretrain/third_party/resnet50_caffe-788b5fa3.pth',
     backbone=dict(
         type='ResNet',
         depth=50,
