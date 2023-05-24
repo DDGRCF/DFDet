@@ -1,4 +1,4 @@
-<div aligned="center"> 
+<div align="center"> 
 
 <h1>DADet🚀</h1> 
 
