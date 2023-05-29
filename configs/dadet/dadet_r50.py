@@ -33,6 +33,7 @@ model = dict(
         feat_channels=256,
         strides=[8, 16, 32, 64, 128],
         scale_theta=True,
+        reg_loss_wh_thre=5,
         bbox_coder=dict(
             type='OBB2DistCoder',
             target_means=(0., 0., 0., 0., 0.),

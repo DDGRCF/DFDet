@@ -221,6 +221,7 @@ class ScaleAdaptiveHead(OBBFCOSHead):
                  centerness_on_reg=False,
                  scale_theta=True,
                  dcn_on_first_conv=False,
+                 reg_loss_wh_thre=5,
                  loss_cls=dict(
                      type='FocalLoss',
                      use_sigmoid=True,
@@ -232,7 +233,7 @@ class ScaleAdaptiveHead(OBBFCOSHead):
                      type='CrossEntropyLoss',
                      use_sigmoid=True,
                      loss_weight=1.0),
-                 loss_trig=dict(type='L1Loss', loss_weight=0.1),
+                 loss_trig=dict(type='L1Loss', loss_weight=0.2),
                  bbox_coder=dict(
                      type='OBB2DistCoder',
                      target_means=(0., 0., 0., 0., 0.),
@@ -252,6 +253,7 @@ class ScaleAdaptiveHead(OBBFCOSHead):
         self.scale_theta = scale_theta
         self.dcn_on_first_conv = dcn_on_first_conv
         self.num_dcn = num_dcn
+        self.reg_loss_wh_thre = reg_loss_wh_thre
 
         self.anchor_generator = build_anchor_generator(anchor_generator)
         self.anchor_center_offset = anchor_generator["center_offset"]
@@ -470,16 +472,17 @@ class ScaleAdaptiveHead(OBBFCOSHead):
             [flatten_reg_preds, flatten_theta_preds], dim=1)
         pos_bbox_preds = flatten_bbox_preds[pos_inds]
 
-        wh_thre = 5
         if num_pos > 0:
             pos_bbox_targets = flatten_bbox_targets[pos_inds]
             pos_centerness_targets = self.centerness_target(pos_bbox_targets)
             pos_theta_preds = flatten_theta_preds[pos_inds]
             pos_points = flatten_anchors[pos_inds]
+
             pos_decoded_bbox_preds = self.bbox_coder.decode(
                 pos_points, pos_bbox_preds, mode="hbb")
             pos_decoded_target_preds = self.bbox_coder.decode(
                 pos_points, pos_bbox_targets, mode="hbb")
+
             # centerness weighted iou loss
             pos_decoded_target_w = (pos_decoded_target_preds[:, 2] -
                                     pos_decoded_target_preds[:, 0]).abs()
@@ -491,9 +494,9 @@ class ScaleAdaptiveHead(OBBFCOSHead):
                 pos_decoded_target_h / pos_decoded_target_w)
 
             pos_decoded_target_scale = torch.where(
-                pos_decoded_target_ratio < wh_thre,
+                pos_decoded_target_ratio < self.reg_loss_wh_thre,
                 pos_decoded_target_ratio.new_tensor(1.),
-                (0.02 * (pos_decoded_target_ratio - wh_thre)).exp())
+                (0.02 * (pos_decoded_target_ratio - self.reg_loss_wh_thre)).exp())
 
             loss_bbox = self.loss_bbox(
                 pos_decoded_bbox_preds,
