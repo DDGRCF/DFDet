@@ -1,6 +1,6 @@
 <div align="center"> 
 
-<h1>✨**𝘿𝘼𝘿𝙚𝙩**✨</h1>
+## ✨𝘿𝘼𝘿𝙚𝙩✨
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=18&pause=1000&color=292EDC&center=true&vCenter=true&width=800&lines=A+Dual+Adaptive+Detector+for+Aerial+Images)](https://git.io/typing-svg)
 
