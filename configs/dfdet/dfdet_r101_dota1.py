@@ -1,4 +1,4 @@
-_base_ = './dadet_r50.py'
+_base_ = './dfdet_r50_dota1.py'
 
 model = dict(
     pretrained=

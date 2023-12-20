@@ -10,13 +10,13 @@
 - [mmcv 0.6.2](https://github.com/open-mmlab/mmcv)
 - [BboxToolkit 1.0](https://github.com/jbwang1997/BboxToolkit)
 
-### Install DADet
+### Install DFDet
 
 a. Create a conda virtual environment and activate it.
 
 ```shell
-conda create -n dadet python=3.7 -y
-conda activate dadet
+conda create -n dfdet python=3.7 -y
+conda activate dfdet
 ```
 
 b. Install PyTorch and torchvision following the [official instructions](https://pytorch.org/), e.g.,

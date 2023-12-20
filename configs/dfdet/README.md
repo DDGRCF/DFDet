@@ -1,9 +1,9 @@
-# DADet
+# DFDet
 
 | Backbone |  Style  | GN  | MS train | Lr schd | GFLOPS  | Param(M)  | Inf time (fps) | mAP |                                                               Config                                                                |                                                                                                                                                            Download                                                                                                                                                            |
 | :------: | :-----: | :-: | :------: | :-----: | :-----: | :-----: | :------------: | :----: | :---------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|   R-50   |  caffe  |  Y  |    N     |   1x    | 158.20  | 30.66  |      23.4      |  74.71  | [config](configs/dadet/dadet_r50.py)  |  [model](https://drive.google.com/file/d/1DSU6sF04WhzhGNSjU50_RLVaRUWZY0Uq/view?usp=share_link) \| [log](https://drive.google.com/file/d/15ZClGivnZXV0kvE5ip-CnzNILwoqxYNi/view?usp=sharing)   |
-|   R-101  |  caffe  |  Y  |    N     |   1x    |   -     |   -     |       -      |  75.08  | [config](configs/dadet/dadet_r101.py)  |  [model](https://drive.google.com/file/d/1_XUGna0q2f4IewKzVdT3NkqwC3_mHGPT/view?usp=share_link) \| [log](https://drive.google.com/file/d/1xb6hMnuIH9G0TcPp8C1F1r3Qjwdd4mKR/view?usp=share_link)   |
+|   R-50   |  caffe  |  Y  |    N     |   1x    | 158.20  | 30.66  |      23.4      |  74.71  | [config](configs/dfdet/dfdet_r50_dota1.py)  |  [model](https://drive.google.com/file/d/1DSU6sF04WhzhGNSjU50_RLVaRUWZY0Uq/view?usp=share_link) \| [log](https://drive.google.com/file/d/15ZClGivnZXV0kvE5ip-CnzNILwoqxYNi/view?usp=sharing)   |
+|   R-101  |  caffe  |  Y  |    N     |   1x    |   -     |   -     |       -      |  75.08  | [config](configs/dfdet/dfdet_r101_dota1.py)  |  [model](https://drive.google.com/file/d/1_XUGna0q2f4IewKzVdT3NkqwC3_mHGPT/view?usp=share_link) \| [log](https://drive.google.com/file/d/1xb6hMnuIH9G0TcPp8C1F1r3Qjwdd4mKR/view?usp=share_link)   |
 
 **Note**: the speed is test on NVIDIA GeForce RTX 3090
 
